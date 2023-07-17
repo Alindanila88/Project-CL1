@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
+  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.1/mapbox-gl-directions.js"></script>
+  <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.1/mapbox-gl-directions.css" type="text/css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet">
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+  <title>Google Maps Clone</title>
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" type="text/css" href="styleScooter.css">
+</head>
+<body>
+  <div id="map"></div>
+
+  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.1/mapbox-gl-directions.js"></script>
+  <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.1/mapbox-gl-directions.css" type="text/css">
+  <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiY3BhdHJhc2N1MTAwOCIsImEiOiJjbGpobGNzNHEwNXk4M2dwNXA3eWhkczQwIn0.VCnxaAheW3fgJIgfaV555w';
+    const map = new mapboxgl.Map({
+      container: 'map',
+      // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+      style: 'mapbox://styles/mapbox/streets-v12',
+      center: [-79.4512, 43.6568],
+      zoom: 13
+    });
+    
+    map.addControl(
+      new MapboxDirections({
+        accessToken: mapboxgl.accessToken
+      }),
+      'top-left'
+    );
+  </script>
+  <div id="sidebar">
+    <button class="button"><a href="index.html">GO BACK</a></button>
+    <div id="photo">
+    </div>
+    <div id="prices">
+      <div class="price-column">
+        <h3>Price 1</h3>
+        <p>9 RON</p>
+        <p style="color:red; font-style: normal;">BEST PRICE!</p>
+        <img src="boltLogo.png" alt="Option 1 Photo">
+      </div>
+      <div class="price-column">
+        <h3>Price 2</h3>
+        <p>12 RON</p>
+        <img src="uberLogo.png" alt="Option 2 Photo">
+      </div>
+      <div class="price-column">
+        <h3>Price 3</h3>
+        <p>13</p> RON</p>
+        <img src="lyftLogo.png" alt="Option 3 Photo">
+      </div>
+      <div class="price-column">
+        <h3>Price 4</h3>
+        <p>18 RON</p>
+        <img src="taxiLogo.png" alt="Option 4 Photo">
+      </div>
+    </div>
+  </div>
+</body>
+</html>

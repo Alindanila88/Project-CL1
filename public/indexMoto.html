@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
+  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.1/mapbox-gl-directions.js"></script>
+  <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.1/mapbox-gl-directions.css" type="text/css">
+
+  <title>Google Maps Clone</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+    }
+
+    #map {
+      height: 100vh;
+      width: 50vw;
+      float: left;
+    }
+
+    #sidebar {
+      width: 50vw;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #photo {
+      height: 40vh;
+      width: 100%;
+      background-color: lightgray;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #photo img {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+    }
+
+    #prices {
+      height: 50vh;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      padding: 10px;
+    }
+
+    .price-column {
+      background-color: lightblue;
+      padding: 10px;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .price-column:hover {
+      background-color: darkblue;
+      color: white;
+    }
+    
+    .price-column img {
+      height: 40px; /* Adjust the height as needed */
+      width: auto;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+    
+    .price-column h3 {
+      font-size: 16px; /* Adjust the font size as needed */
+      font-weight: bold;
+    }
+    
+    .price-column p {
+      font-size: 14px; /* Adjust the font size as needed */
+      font-weight: bold;
+    }
+    
+    @media only screen and (max-width: 600px) {
+      .service-card {
+        width: 100%;
+        margin: 10px 0;
+      }
+    }
+    .button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background-color: #1433be;
+      color: white;
+    }
+  </style>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div id="map"></div>
+  <div id="sidebar">
+    <button class="button"><a href="index.html">GoBack</a></button>
+    <div id="photo">
+      <img src="scuter1.jpg" alt="Your Photo">
+    </div>
+    <div id="prices">
+      <div class="price-column">
+        <h3>Offer Price 1</h3>
+        <p>25 RON</p>
+        <img src="boltLogo.png" alt="Option 1 Photo">
+      </div>
+      <div class="price-column">
+        <h3>Offer Price 2</h3>
+        <p>18 RON</p>
+        <p style="color:red">Best Value!</p>
+        <img src="uberLogo.png" alt="Option 2 Photo">
+      </div>
+      <div class="price-column">
+        <h3>Offer Price 3</h3>
+        <p>$34 RON</p>
+        <img src="lyftLogo.png" alt="Option 3 Photo">
+      </div>
+      <div class="price-column">
+        <h3>Offer Price 4</h3>
+        <p>40 RON</p>
+        <img src="taxiLogo.png" alt="Option 4 Photo">
+      </div>
+    </div>
+  </div>
+</body>
+</html>
